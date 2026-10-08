@@ -18,7 +18,7 @@ for cor in range(c):
     faixa.append(plano[-1].flatten())
     #plt.scatter(np.arange(len(faixa[-1])), faixa[-1])
 
-K = 2
+K = 3
 centroid = []
 n_pixels = len(faixa[0])
 
@@ -120,9 +120,12 @@ while True:
         break
 
 H, W, C = img.shape
-color = [[0, 0, 0],        # Cluster 0 → preto
-    [255, 255, 255],  # Cluster 1 → branco
-    [0, 0, 0]         # Cluster 2 → preto
+color = [[255, 165, 0],    # Cluster 0 → laranja
+    [255, 105, 180],  # Cluster 1 → rosa
+    [0, 0, 0],         # Cluster 2 → preto
+    [255, 0, 0],       # Cluster 3 → vermelho
+    [0, 0, 255],       # Cluster 4 → azul
+    [255, 255, 255]    # Cluster 5 → branco
 ]
 segmented = np.empty((H, W, 3), dtype=np.uint8)
 for k in range(K):
