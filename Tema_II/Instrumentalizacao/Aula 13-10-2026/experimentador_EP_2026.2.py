@@ -627,3 +627,38 @@ resumo['tempo_predito'] = model_n_k(X_data, *popt)
 
 # ---> CHAMADA DA NOVA FUNÇÃO AQUI <---
 exibir_equacao_ajustada(popt, X_data, y_data)
+
+# ==========================================
+# 6.5. Plotagem da Superfície 3D (Tempo vs n, k)
+# ==========================================
+fig_3d = plt.figure(figsize=(10, 8))
+ax_3d = fig_3d.add_subplot(111, projection='3d')
+    
+# Cria uma malha contínua para a superfície teórica baseada nos limites reais
+n_linspace = np.linspace(resumo['n'].min(), resumo['n'].max(), 30)
+k_linspace = np.linspace(resumo['k'].min(), resumo['k'].max(), 30)
+N_mesh, K_mesh = np.meshgrid(n_linspace, k_linspace)
+    
+# Aplica a equação ajustada (popt) em todos os pontos da malha
+T_mesh = model_n_k((N_mesh, K_mesh), *popt)
+    
+# Desenha a superfície teórica (Translúcida)
+surf = ax_3d.plot_surface(N_mesh, K_mesh, T_mesh, cmap='viridis', alpha=0.6, 
+                              linewidth=0.1, antialiased=True)
+fig_3d.colorbar(surf, ax=ax_3d, shrink=0.5, aspect=10, pad=0.1, label='Tempo (s)')
+    
+# Sobrepõe os pontos empíricos medidos na bancada
+ax_3d.scatter(resumo['n'], resumo['k'], resumo['tempo_medio'], 
+              color='red', edgecolor='black', s=60, label='Pontos Empíricos', depthshade=False)
+    
+# Configuração dos eixos e ângulos
+ax_3d.set_xlabel('Tamanho da Imagem (n pixels)')
+ax_3d.set_ylabel('Número de Clusters (K)')
+ax_3d.set_zlabel('Tempo de Execução (s)')
+ax_3d.set_title('Superfície F.O.C.A: Tempo(n, K)')
+ax_3d.view_init(elev=25, azim=135) # Ajuste o ângulo de visão conforme necessário
+ax_3d.legend()
+    
+plt.tight_layout()
+plt.savefig('superficie_3d_foca.png', dpi=300)
+plt.show()
