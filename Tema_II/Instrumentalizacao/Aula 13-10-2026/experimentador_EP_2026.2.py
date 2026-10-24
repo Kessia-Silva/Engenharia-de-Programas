@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from scipy.optimize import curve_fit
 
+# Define a semente para reproduzir os mesmos resultados aleatórios.
+np.random.seed(42)
 
 # ==========================================
 # 1. Função de segmentação K-Means do aluno
