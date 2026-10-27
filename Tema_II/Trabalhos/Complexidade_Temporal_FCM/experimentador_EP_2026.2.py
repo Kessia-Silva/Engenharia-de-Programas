@@ -17,7 +17,7 @@ from scipy.optimize import curve_fit
 # ==========================================
 # 1. Função de segmentação K-Means do aluno
 # ==========================================
-from fcm_original_teste import segmenta_imagem
+from fcm_missao4 import segmenta_imagem
 
 
 

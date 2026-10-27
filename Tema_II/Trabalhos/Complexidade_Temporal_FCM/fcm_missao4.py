@@ -1,24 +1,34 @@
-
 import random
-import numpy as np
+from PIL import Image
 
 
-
-def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
+def fcm_processar_imagem(img, K, m=2.0, max_iter=100, epsilon=0.01):
     """
-    FCM baseado no baseline oficial do professor.
-    Missão 4: Loop Unrolling dos canais RGB.
-
-    X: lista de pixels, cada um representado por [R, G, B].
-    K: número de clusters.
+    Executa o pipeline completo do FCM com Loop Unrolling nos canais RGB.
     """
+    largura, altura = img.size
+
+    # Extração segura dos pixels da imagem
+    pixels_2d = list(img.getdata())
+
+    X = []
+    for p in pixels_2d:
+        X.append([float(p[0]), float(p[1]), float(p[2])])
 
     N = len(X)
-    canais = len(X[0])
+    canais = 3
 
-    # FASE 1: INICIALIZAÇÃO DA MATRIZ DE PERTINÊNCIA U
+    paleta_cores = [
+        [255, 0, 0],      # Cluster 0: Vermelho
+        [0, 255, 0],      # Cluster 1: Verde
+        [0, 0, 255],      # Cluster 2: Azul
+        [255, 255, 0],    # Cluster 3: Amarelo
+        [255, 0, 255],    # Cluster 4: Magenta
+        [0, 255, 255]     # Cluster 5: Ciano
+    ]
+
+    # Inicialização da matriz de pertinências U
     U = []
-
     for i in range(N):
         linha = []
         soma_linha = 0.0
@@ -29,14 +39,19 @@ def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
             soma_linha += val
 
         for j in range(K):
-            linha[j] = linha[j] / soma_linha
+            if soma_linha == 0.0:
+                linha[j] = 1.0 / K
+            else:
+                linha[j] = linha[j] / soma_linha
 
         U.append(linha)
 
-    # LAÇO PRINCIPAL DO FCM
-    for iteracao in range(max_iter):
+    # Laço principal do FCM
+    iteracoes_realizadas = 0
 
-        # FASE 2: ATUALIZAÇÃO DOS CENTROIDES
+    for iteracao in range(max_iter):
+        iteracoes_realizadas = iteracao + 1
+
         C = []
 
         for j in range(K):
@@ -47,22 +62,21 @@ def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
                 u_m = U[i][j] ** m
                 denominador += u_m
 
-                # MISSÃO 4: LOOP UNROLLING
-                # Substitui o laço dos canais RGB por operações explícitas.
+                # MISSÃO 4: Loop Unrolling na acumulação dos canais RGB
                 numerador[0] += u_m * X[i][0]
                 numerador[1] += u_m * X[i][1]
                 numerador[2] += u_m * X[i][2]
 
-            # MISSÃO 4: construção explícita do centróide RGB.
-            centroide_j = [
-                numerador[0] / denominador,
-                numerador[1] / denominador,
-                numerador[2] / denominador
-            ]
+            centroide_j = []
+
+            for c in range(canais):
+                if denominador == 0.0:
+                    centroide_j.append(0.0)
+                else:
+                    centroide_j.append(numerador[c] / denominador)
 
             C.append(centroide_j)
 
-        # FASE 3 E 4: DISTÂNCIAS, PERTINÊNCIAS E CONVERGÊNCIA
         U_nova = []
         max_diff = 0.0
 
@@ -71,17 +85,16 @@ def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
             distancias = [0.0] * K
 
             for j in range(K):
-                soma_quadrados = 0.0
-
-                # MISSÃO 4: LOOP UNROLLING DAS DISTÂNCIAS RGB.
+                # MISSÃO 4: Loop Unrolling no cálculo da distância RGB
                 diff_r = X[i][0] - C[j][0]
-                soma_quadrados += diff_r * diff_r
-
                 diff_g = X[i][1] - C[j][1]
-                soma_quadrados += diff_g * diff_g
-
                 diff_b = X[i][2] - C[j][2]
-                soma_quadrados += diff_b * diff_b
+
+                soma_quadrados = (
+                    diff_r * diff_r
+                    + diff_g * diff_g
+                    + diff_b * diff_b
+                )
 
                 distancias[j] = soma_quadrados ** 0.5
 
@@ -98,10 +111,13 @@ def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
                 soma_dist = 0.0
 
                 for k in range(K):
-                    razao = distancias[j] / distancias[k]
+                    d_k = distancias[k] if distancias[k] > 0.0 else 1e-10
+                    razao = distancias[j] / d_k
                     soma_dist += razao ** (2.0 / (m - 1.0))
 
-                pertinencia = 1.0 / soma_dist
+                pertinencia = (
+                    1.0 / soma_dist if soma_dist > 0.0 else (1.0 / K)
+                )
                 linha_nova[j] = pertinencia
 
                 diff_u = pertinencia - U[i][j]
@@ -114,63 +130,51 @@ def fcm_missao4(X, K, m=2.0, max_iter=100, epsilon=0.01):
 
             U_nova.append(linha_nova)
 
-        # Atualização da matriz de pertinências.
+        # Atualização da matriz de pertinências
         U = U_nova
 
         if max_diff < epsilon:
+            print(f"-> Convergiu na iteração {iteracao + 1}!")
             break
 
-    return C, U
+    # Registra a quantidade de iterações da execução
+    fcm_processar_imagem.ultima_iteracao = iteracoes_realizadas
+
+    # Colorização por pertinência máxima
+    pixels_segmentados_lista = []
+
+    for i in range(N):
+        maior_pertinencia = -1.0
+        cluster_vencedor = 0
+
+        for j in range(K):
+            if U[i][j] > maior_pertinencia:
+                maior_pertinencia = U[i][j]
+                cluster_vencedor = j
+
+        cor = paleta_cores[cluster_vencedor % len(paleta_cores)]
+        pixels_segmentados_lista.append((cor[0], cor[1], cor[2]))
+
+    # Reconstrução da imagem segmentada
+    imagem_final = Image.new("RGB", (largura, altura))
+    imagem_final.putdata(pixels_segmentados_lista)
+
+    return C, U, imagem_final
 
 
 def segmenta_imagem(imagem_array, k):
     """
-    Adaptador para o experimentador.py.
-
-    Recebe uma imagem NumPy no formato H x W x 3
-    e devolve a imagem segmentada no mesmo formato.
+    Adaptador para o experimentador da Missão 4.
+    Recebe uma imagem como array e retorna a imagem segmentada.
     """
+    imagem = Image.fromarray(imagem_array).convert("RGB")
 
-    # Garante três canais RGB.
-    if imagem_array.ndim == 2:
-        imagem_array = np.stack(
-            [imagem_array] * 3,
-            axis=-1
-        )
-    elif imagem_array.shape[2] == 4:
-        imagem_array = imagem_array[:, :, :3]
-
-    img = np.asarray(imagem_array, dtype=np.uint8)
-
-    H, W, C = img.shape
-
-    # Converte a imagem em uma lista de pixels RGB.
-    X = img.reshape(-1, 3).astype(float).tolist()
-
-    # Executa o FCM da Missão 4.
-    _, U = fcm_missao4(
-        X,
+    _, _, imagem_segmentada = fcm_processar_imagem(
+        img=imagem,
         K=k,
         m=2.0,
         max_iter=100,
-        epsilon=0.01
+        epsilon=0.001
     )
-
-    # Paleta de cores utilizada na visualização.
-    cores = np.array([
-        [255, 165, 0],    # Laranja
-        [255, 105, 180],  # Rosa
-        [0, 0, 0],        # Preto
-        [255, 0, 0],      # Vermelho
-        [0, 0, 255],      # Azul
-        [255, 255, 255]   # Branco
-    ], dtype=np.uint8)
-
-    # Atribui cada pixel ao cluster de maior pertinência.
-    clusters = np.argmax(np.asarray(U), axis=1)
-
-    imagem_segmentada = cores[
-        clusters % len(cores)
-    ].reshape(H, W, 3)
 
     return imagem_segmentada

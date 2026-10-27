@@ -1,0 +1,323 @@
+Mapeando imagens e calculando n (apenas cabeçalhos)...
+3 imagens ordenadas prontas para processamento.
+
+Carregando Peter Parker.jpg para a memória (n=2500)...
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 2!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 11!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 7!
+-> Convergiu na iteração 11!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 11!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 12!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 2!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 7!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 11!
+K=2: 30 repetições concluídas.
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 24!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+K=3: 30 repetições concluídas.
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 32!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 20!
+K=4: 30 repetições concluídas.
+Análise de Peter Parker.jpg concluída. Memória liberada.
+
+Carregando steve rogers comic icon_ marvel comic icons.jpg para a memória (n=4900)...
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 13!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 11!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 9!
+-> Convergiu na iteração 8!
+-> Convergiu na iteração 10!
+K=2: 30 repetições concluídas.
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 13!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 11!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 13!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 12!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 10!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 13!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 19!
+K=3: 30 repetições concluídas.
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 13!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 16!
+K=4: 30 repetições concluídas.
+Análise de steve rogers comic icon_ marvel comic icons.jpg concluída. Memória liberada.
+
+Carregando wanda maximoff - scarlet witch.jpg para a memória (n=10000)...
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 24!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 24!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 23!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 22!
+K=2: 30 repetições concluídas.
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 14!
+-> Convergiu na iteração 15!
+K=3: 30 repetições concluídas.
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 25!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 16!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 22!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 18!
+-> Convergiu na iteração 24!
+-> Convergiu na iteração 15!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 17!
+-> Convergiu na iteração 20!
+-> Convergiu na iteração 21!
+-> Convergiu na iteração 19!
+-> Convergiu na iteração 24!
+-> Convergiu na iteração 18!
+K=4: 30 repetições concluídas.
+Análise de wanda maximoff - scarlet witch.jpg concluída. Memória liberada.
+
+--- Resumo de Estabilidade ---
+       n  k  tempo_medio    desvio  contagem_valida        CV  estavel_CV_menor_15
+0   2500  2     0.072300  0.017288               26  0.239120                False
+1   2500  3     0.209312  0.028656               26  0.136904                 True
+2   2500  4     0.305994  0.035229               26  0.115131                 True
+3   4900  2     0.153450  0.019065               26  0.124240                 True
+4   4900  3     0.391700  0.075139               26  0.191828                False
+5   4900  4     0.598089  0.071322               26  0.119250                 True
+6  10000  2     0.821726  0.040462               26  0.049240                 True
+7  10000  3     0.892235  0.114166               26  0.127955                 True
+8  10000  4     1.562607  0.224346               26  0.143572                 True
+
+Pipeline concluído. Gráficos gerados e salvos como 'relatorio_complexidade.png'.
+
+Tabela de avaliação exportada com sucesso para: resultados_foca_aluno.csv
+
+============================================================
+   MODELO EMPÍRICO AJUSTADO: T(n, K)
+============================================================
+Formulação Geral:
+  T(n, K) = α·(n·K) + β·n + γ·K + δ
+
+Parâmetros Identificados:
+  α (alpha) =   3.306633e-05 s/(pixel·cluster)
+  β (beta)  =   2.342735e-05 s/pixel
+  γ (gamma) =   4.475079e-02 s/cluster
+  δ (delta) =  -2.891060e-01 s (overhead base)
+------------------------------------------------------------
+Equação Parametrizada:
+  T(n, K) = (3.3066e-05)·(n·K) + (2.3427e-05)·n + (4.4751e-02)·K + (-2.8911e-01)
+Aderência Estatística (R²): 0.9551
+============================================================
